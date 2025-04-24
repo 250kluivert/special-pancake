@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Blog</title>
+    <link rel="stylesheet" href="styling.css">
+</head>
+<body>
+    <header class="header">
+
+        <span> MY PORTFOLIO</span>
+   
+   
+   <nav class="navbar">
+   <a href="home.html">home</a>
+   <a href="about me.html">about</a>
+   <a href="contacts.html">contacts</a>
+   <a href="blogs.html">blogs</a>
+   <a href="blog dashboards.html">blog dashboards</a>
+   
+   </nav>
+   
+      </header> 
+      <div class="container">
+        <h1>BLOG</h1>
+        <form id="dataForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" required placeholder="Enter Name"> 
+            <label for="Blog">blog:</label>
+            <input type="blog" id="blog" required placeholder="Add a Blog">
+            <button type="submit">create a blog
+
+            </button>
+        </form>
+        
+        <ul id="dataList"></ul>
+    </div>
+    <main>
+        <h2>Blog Posts</h2>
+        <div id="blogPosts">
+            
+        </div>
+
+       
+    </main>
+    <script>
+          document.getElementById('dataForm').addEventListener('submit', function(event) {
+            event.preventDefault(); 
+
+            
+            const name = document.getElementById('name').value;
+            const blogContent = document.getElementById('blog').value;
+
+           
+            const blogPost = document.createElement('article');
+            blogPost.innerHTML = `
+                <h3>${name}</h3>
+                <p><em>Published on: ${new Date().toLocaleDateString()}</em></p>
+                <p>${blogContent}</p>
+            `;
+            document.getElementById('blogPosts').appendChild(blogPost);
+            document.getElementById('dataForm').reset();
+        });
+    </script>
+
+    <footer class="footer">
+
+
+        <div class="social-icons">
+            <a href="#">
+                <i class="bx bxl-github"></i>
+            </a>
+            <a href="#">
+                <i class="bx bxl-linkedin-square"></i>
+            
+            </a>
+            <a href="#">
+                <i class="bx bxl-instagram-alt"></i>
+            
+            </a>
+            <a href="#">
+                <i class="bx bxl-twitter"></i>
+            
+            </a>
+         </div>
+         <ul class="list">
+            <li>
+                <a href="#">FAQ</a>
+            </li>
+            <li>
+                <a href="#about">About</a>
+            </li>
+            <li>
+                <a href="#blogs">blogs</a>
+            </li>
+            <li>
+                <a href="#contacts">Contacts</a>
+            </li>
+         </ul>
+         <p class="copyright">
+            &copy;toonDev | All Right Reserved
+         </p>
+         </footer>
+</body>
+</html>
